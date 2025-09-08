@@ -378,23 +378,35 @@ function setBudget() {
 }
 
 function resetAllData() {
-  if (!confirm("Are you sure you want to reset ALL data (including history and recurring defaults)?")) return;
+  const confirmReset = confirm("⚠️ You are about to RESET ALL data (including history and recurring defaults). This action cannot be undone. Are you sure?");
+  if (!confirmReset) return; // If user clicks "Cancel", do nothing
+
+  // Reset data
   fixedExpenses = [];
   extraExpenses = [];
   totalBudget = 12000;
   history = {};
   recurring = { rent: 4000, food: 2800, wifi: 250 };
+  
+  // Reset UI
   budgetInput.value = totalBudget;
   recurringRent.value = recurring.rent;
   recurringFood.value = recurring.food;
   recurringWifi.value = recurring.wifi;
+
+  // Clear localStorage and save fresh state
   localStorage.clear();
   saveAll();
+
+  // Re-render UI
   renderFixedTable();
   renderExtraTable();
   refreshMonthSelect();
   updateSummary();
+
+  alert("✅ All data has been reset successfully.");
 }
+
 
 function toggleTheme() {
   document.body.classList.toggle("dark");
