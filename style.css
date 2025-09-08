@@ -259,3 +259,19 @@ th::after {
   .grid-3 { grid-template-columns: 1fr; }
   .stack-mobile { grid-template-columns: 1fr; }
 }
+
+/* About Section Collapsible */
+.about-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.about-header span {
+  transition: transform 0.2s ease;
+}
+
+.about-header.open span {
+  transform: rotate(180deg);
+}
