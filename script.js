@@ -466,3 +466,14 @@ window.editFixedExpense = editFixedExpense;
 window.deleteFixedExpense = deleteFixedExpense;
 window.editExtraExpense = editExtraExpense;
 window.deleteExtraExpense = deleteExtraExpense;
+
+// Collapsible About Section
+const aboutToggle = document.getElementById("aboutToggle");
+const aboutContent = document.querySelector(".about-content");
+const aboutArrow = document.getElementById("aboutArrow");
+
+aboutToggle.addEventListener("click", () => {
+  const isVisible = aboutContent.style.display === "block";
+  aboutContent.style.display = isVisible ? "none" : "block";
+  aboutToggle.classList.toggle("open", !isVisible);
+});
