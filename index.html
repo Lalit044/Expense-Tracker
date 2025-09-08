@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Expense Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="app-header">
+        <div>
+          <h1>💰 Expense Tracker</h1>
+          <h2 id="monthDisplay">Loading month…</h2>
+        </div>
+        <button id="themeToggle" class="icon-btn" title="Toggle theme">🌙</button>
+      </header>
+
+      <!-- Budget -->
+      <section class="card">
+        <div class="row gap">
+          <label for="totalBudget" class="label">Total Budget (₹)</label>
+          <div class="inline">
+            <input type="number" id="totalBudget" value="10000" inputmode="decimal" />
+            <button id="setBudgetBtn" class="primary small">✔️ Set Budget</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recurring fixed defaults (editable) -->
+      <section class="card">
+        <div class="row space-between">
+          <h3>Recurring Fixed (Auto every month)</h3>
+          <button id="applyRecurringNowBtn" class="ghost small" title="Add recurring to this month again">↻ Apply Now</button>
+        </div>
+        <div class="grid-3">
+          <div class="field">
+            <label>Rent (₹)</label>
+            <input type="number" id="recurringRent" placeholder="e.g., 4000" inputmode="decimal" />
+          </div>
+          <div class="field">
+            <label>Food (₹)</label>
+            <input type="number" id="recurringFood" placeholder="e.g., 2800" inputmode="decimal" />
+          </div>
+          <div class="field">
+            <label>Wifi (₹)</label>
+            <input type="number" id="recurringWifi" placeholder="e.g., 250" inputmode="decimal" />
+          </div>
+        </div>
+        <div class="row end">
+          <button id="saveRecurringBtn" class="secondary small">💾 Save Recurring Defaults</button>
+        </div>
+        <p class="hint">These three items are auto-added as fixed expenses at the start of each month. You can edit or delete them later.</p>
+      </section>
+
+      <!-- Fixed Expenses -->
+      <section class="card">
+        <h3>Add Fixed Expense</h3>
+        <div class="stack-mobile">
+          <input type="text" id="fixedName" placeholder="Expense Name (e.g., Rent)" />
+          <input type="number" id="fixedAmount" placeholder="Amount (₹)" inputmode="decimal" />
+          <button id="addFixedBtn" class="primary small">➕ Add Fixed Expense</button>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Expense</th>
+                <th>Amount (₹)</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="fixedTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Extra Expenses -->
+      <section class="card">
+        <h3>Add Extra Expense</h3>
+
+        <!-- Mobile-friendly quick add chips -->
+        <div class="chips" id="quickChips">
+          <button class="chip" data-name="Food">Food</button>
+          <button class="chip" data-name="Travel">Travel</button>
+          <button class="chip" data-name="Shopping">Shopping</button>
+          <button class="chip" data-name="Coffee">Coffee</button>
+          <button class="chip" data-name="Taxi">Taxi</button>
+          <button class="chip" data-name="Groceries">Groceries</button>
+        </div>
+
+        <div class="stack-mobile">
+          <input type="text" id="expenseName" placeholder="Expense Name (e.g., Movie)" />
+          <input type="number" id="expenseAmount" placeholder="Amount (₹)" inputmode="decimal" />
+          <input type="date" id="expenseDate" />
+          <input type="text" id="expenseNote" placeholder="Optional note/description (e.g., with friends)" />
+          <div class="inline">
+            <button id="addExtraBtn" class="primary small">➕ Add Extra Expense</button>
+            <button id="sortExtraBtn" class="ghost small">🔽 Sort Descending</button>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Expense</th>
+                <th>Amount (₹)</th>
+                <th>Date & Time</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="expenseTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Summary -->
+      <section class="summary card" id="summary"></section>
+
+      <!-- Reset + Export -->
+      <section class="card">
+        <div class="stack-mobile">
+          <button id="resetBtn" class="danger small">♻️ Reset All Data</button>
+        </div>
+
+        <div class="export-row">
+          <div class="inline">
+            <label for="monthSelect" class="label">Download Selected Month</label>
+            <select id="monthSelect"></select>
+            <button id="downloadSelectedBtn" class="secondary small">📥 Download</button>
+          </div>
+          <div class="inline">
+            <button id="downloadHistoryBtn" class="ghost small">📦 Download All History (CSV)</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
