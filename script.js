@@ -475,5 +475,5 @@ const aboutArrow = document.getElementById("aboutArrow");
 aboutToggle.addEventListener("click", () => {
   const isVisible = aboutContent.style.display === "block";
   aboutContent.style.display = isVisible ? "none" : "block";
-  aboutToggle.classList.toggle("open", !isVisible);
+  aboutArrow.textContent = isVisible ? "▼" : "▲";
 });
