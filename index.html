@@ -13,61 +13,114 @@
           <h1>💰 Expense Tracker</h1>
           <h2 id="monthDisplay">Loading month…</h2>
         </div>
-        <button id="themeToggle" class="icon-btn" title="Toggle theme">🌙</button>
+        <button id="themeToggle" class="icon-btn" title="Toggle theme">
+          🌙
+        </button>
       </header>
 
       <!-- About Section (Collapsible) -->
-<section class="card">
-  <h3 class="about-header" id="aboutToggle" style="cursor:pointer">
-    ℹ️ About Expense Tracker <span id="aboutArrow">▼</span>
-  </h3>
-  <div class="about-content" style="display:none;">
-    <p>
-      <strong>Expense Tracker</strong> is a simple yet powerful web application designed to help you manage your monthly budget efficiently.
-      Track both fixed and extra expenses to get a clear picture of your finances at a glance.
-    </p>
+      <section class="card">
+        <h3 class="about-header" id="aboutToggle" style="cursor: pointer">
+          ℹ️ About Expense Tracker <span id="aboutArrow">▼</span>
+        </h3>
+        <div class="about-content" style="display: none">
+          <p>
+            <strong>Expense Tracker</strong> is a simple yet powerful web
+            application designed to help you manage your monthly budget
+            efficiently. Track both fixed and extra expenses to get a clear
+            picture of your finances at a glance.
+          </p>
 
-    <h4>Features:</h4>
-    <ul>
-      <li><strong>Budget Management:</strong> Set and adjust your total monthly budget.</li>
-      <li><strong>Recurring Fixed Expenses:</strong> Auto-tracks rent, food, and wifi every month. Can also be applied manually.</li>
-      <li><strong>Fixed Expenses:</strong> Add, edit, or delete one-time fixed expenses.</li>
-      <li><strong>Extra Expenses:</strong> Record ad-hoc spending with name, amount, date, and optional note.</li>
-      <li><strong>Quick Add Chips:</strong> Add common expenses instantly.</li>
-      <li><strong>Sorting & Editing:</strong> Sort extra expenses by amount, edit, or delete entries.</li>
-      <li><strong>Summary:</strong> See total expenses and remaining budget with clear indicators.</li>
-      <li><strong>Export Data:</strong> Download selected months or entire history as CSV.</li>
-      <li><strong>Dark & Light Theme:</strong> Comfortable viewing with theme toggle.</li>
-    </ul>
+          <h4>Features:</h4>
+          <ul>
+            <li>
+              <strong>Budget Management:</strong> Set and adjust your total
+              monthly budget.
+            </li>
+            <li>
+              <strong>Recurring Fixed Expenses:</strong> Auto-tracks rent, food,
+              and wifi every month. Can also be applied manually.
+            </li>
+            <li>
+              <strong>Fixed Expenses:</strong> Add, edit, or delete one-time
+              fixed expenses.
+            </li>
+            <li>
+              <strong>Extra Expenses:</strong> Record ad-hoc spending with name,
+              amount, date, and optional note.
+            </li>
+            <li>
+              <strong>Quick Add Chips:</strong> Add common expenses instantly.
+            </li>
+            <li>
+              <strong>Sorting & Editing:</strong> Sort extra expenses by amount,
+              edit, or delete entries.
+            </li>
+            <li>
+              <strong>Summary:</strong> See total expenses and remaining budget
+              with clear indicators.
+            </li>
+            <li>
+              <strong>Export Data:</strong> Download selected months or entire
+              history as CSV.
+            </li>
+            <li>
+              <strong>Dark & Light Theme:</strong> Comfortable viewing with
+              theme toggle.
+            </li>
+          </ul>
 
-    <h4>How It Works:</h4>
-    <p>
-      All data is stored locally in your browser using <strong>localStorage</strong>. Recurring expenses are auto-applied each month. Extra and fixed expenses update the summary in real-time. Export data anytime as CSV for backup.
-    </p>
+          <h4>How It Works:</h4>
+          <p>
+            All data is stored locally in your browser using
+            <strong>localStorage</strong>. Recurring expenses are auto-applied
+            each month. Extra and fixed expenses update the summary in
+            real-time. Export data anytime as CSV for backup.
+          </p>
 
-    <h4>⚠ Important Warning:</h4>
-    <p>
-      Clearing your browser history or local storage will permanently delete all expense details and history. Export your data before clearing your browser if you want to save it.
-    </p>
+          <h4>⚠ Important Warning:</h4>
+          <p>
+            Clearing your browser history or local storage will permanently
+            delete all expense details and history. Export your data before
+            clearing your browser if you want to save it.
+          </p>
 
-    <h4>Future Improvements:</h4>
-    <ul>
-      <li>Cloud storage for syncing data across devices.</li>
-      <li>Charts and analytics for spending trends.</li>
-      <li>Multi-user support for shared budgets.</li>
-      <li>Improved mobile interface for a smoother experience.</li>
-    </ul>
-  </div>
-</section>
-
+          <h4>Future Improvements:</h4>
+          <ul>
+            <li>
+              Implement <strong>cloud storage and a backend</strong> to securely
+              store and sync data across multiple devices.
+            </li>
+            <li>
+              Add <strong>charts and analytics</strong> to visualize spending
+              trends and budget insights.
+            </li>
+            <li>
+              Enable <strong>multi-user support</strong> for shared budgets and
+              collaborative expense tracking.
+            </li>
+            <li>
+              Enhance the <strong>mobile interface</strong> for a smoother and
+              more intuitive experience.
+            </li>
+          </ul>
+        </div>
+      </section>
 
       <!-- Budget -->
       <section class="card">
         <div class="row gap">
           <label for="totalBudget" class="label">Total Budget (₹)</label>
           <div class="inline">
-            <input type="number" id="totalBudget" value="10000" inputmode="decimal" />
-            <button id="setBudgetBtn" class="primary small">✔️ Set Budget</button>
+            <input
+              type="number"
+              id="totalBudget"
+              value="10000"
+              inputmode="decimal"
+            />
+            <button id="setBudgetBtn" class="primary small">
+              ✔️ Set Budget
+            </button>
           </div>
         </div>
       </section>
@@ -76,35 +129,72 @@
       <section class="card">
         <div class="row space-between">
           <h3>Recurring Fixed (Auto every month)</h3>
-          <button id="applyRecurringNowBtn" class="ghost small" title="Add recurring to this month again">↻ Apply Now</button>
+          <button
+            id="applyRecurringNowBtn"
+            class="ghost small"
+            title="Add recurring to this month again"
+          >
+            ↻ Apply Now
+          </button>
         </div>
         <div class="grid-3">
           <div class="field">
             <label>Rent (₹)</label>
-            <input type="number" id="recurringRent" placeholder="e.g., 4000" inputmode="decimal" />
+            <input
+              type="number"
+              id="recurringRent"
+              placeholder="e.g., 4000"
+              inputmode="decimal"
+            />
           </div>
           <div class="field">
             <label>Food (₹)</label>
-            <input type="number" id="recurringFood" placeholder="e.g., 2800" inputmode="decimal" />
+            <input
+              type="number"
+              id="recurringFood"
+              placeholder="e.g., 2800"
+              inputmode="decimal"
+            />
           </div>
           <div class="field">
             <label>Wifi (₹)</label>
-            <input type="number" id="recurringWifi" placeholder="e.g., 250" inputmode="decimal" />
+            <input
+              type="number"
+              id="recurringWifi"
+              placeholder="e.g., 250"
+              inputmode="decimal"
+            />
           </div>
         </div>
         <div class="row end">
-          <button id="saveRecurringBtn" class="secondary small">💾 Save Recurring Defaults</button>
+          <button id="saveRecurringBtn" class="secondary small">
+            💾 Save Recurring Defaults
+          </button>
         </div>
-        <p class="hint">These three items are auto-added as fixed expenses at the start of each month. You can edit or delete them later.</p>
+        <p class="hint">
+          These three items are auto-added as fixed expenses at the start of
+          each month. You can edit or delete them later.
+        </p>
       </section>
 
       <!-- Fixed Expenses -->
       <section class="card">
         <h3>Add Fixed Expense</h3>
         <div class="stack-mobile">
-          <input type="text" id="fixedName" placeholder="Expense Name (e.g., Rent)" />
-          <input type="number" id="fixedAmount" placeholder="Amount (₹)" inputmode="decimal" />
-          <button id="addFixedBtn" class="primary small">➕ Add Fixed Expense</button>
+          <input
+            type="text"
+            id="fixedName"
+            placeholder="Expense Name (e.g., Rent)"
+          />
+          <input
+            type="number"
+            id="fixedAmount"
+            placeholder="Amount (₹)"
+            inputmode="decimal"
+          />
+          <button id="addFixedBtn" class="primary small">
+            ➕ Add Fixed Expense
+          </button>
         </div>
 
         <div class="table-container">
@@ -136,13 +226,30 @@
         </div>
 
         <div class="stack-mobile">
-          <input type="text" id="expenseName" placeholder="Expense Name (e.g., Movie)" />
-          <input type="number" id="expenseAmount" placeholder="Amount (₹)" inputmode="decimal" />
+          <input
+            type="text"
+            id="expenseName"
+            placeholder="Expense Name (e.g., Movie)"
+          />
+          <input
+            type="number"
+            id="expenseAmount"
+            placeholder="Amount (₹)"
+            inputmode="decimal"
+          />
           <input type="date" id="expenseDate" />
-          <input type="text" id="expenseNote" placeholder="Optional note/description (e.g., with friends)" />
+          <input
+            type="text"
+            id="expenseNote"
+            placeholder="Optional note/description (e.g., with friends)"
+          />
           <div class="inline">
-            <button id="addExtraBtn" class="primary small">➕ Add Extra Expense</button>
-            <button id="sortExtraBtn" class="ghost small">🔽 Sort Descending</button>
+            <button id="addExtraBtn" class="primary small">
+              ➕ Add Extra Expense
+            </button>
+            <button id="sortExtraBtn" class="ghost small">
+              🔽 Sort Descending
+            </button>
           </div>
         </div>
 
@@ -172,12 +279,18 @@
 
         <div class="export-row">
           <div class="inline">
-            <label for="monthSelect" class="label">Download Selected Month</label>
+            <label for="monthSelect" class="label"
+              >Download Selected Month</label
+            >
             <select id="monthSelect"></select>
-            <button id="downloadSelectedBtn" class="secondary small">📥 Download</button>
+            <button id="downloadSelectedBtn" class="secondary small">
+              📥 Download
+            </button>
           </div>
           <div class="inline">
-            <button id="downloadHistoryBtn" class="ghost small">📦 Download All History (CSV)</button>
+            <button id="downloadHistoryBtn" class="ghost small">
+              📦 Download All History (CSV)
+            </button>
           </div>
         </div>
       </section>
