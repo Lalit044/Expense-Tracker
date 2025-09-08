@@ -16,6 +16,51 @@
         <button id="themeToggle" class="icon-btn" title="Toggle theme">🌙</button>
       </header>
 
+      <!-- About Section (Collapsible) -->
+<section class="card">
+  <h3 class="about-header" id="aboutToggle" style="cursor:pointer">
+    ℹ️ About Expense Tracker <span id="aboutArrow">▼</span>
+  </h3>
+  <div class="about-content" style="display:none;">
+    <p>
+      <strong>Expense Tracker</strong> is a simple yet powerful web application designed to help you manage your monthly budget efficiently.
+      Track both fixed and extra expenses to get a clear picture of your finances at a glance.
+    </p>
+
+    <h4>Features:</h4>
+    <ul>
+      <li><strong>Budget Management:</strong> Set and adjust your total monthly budget.</li>
+      <li><strong>Recurring Fixed Expenses:</strong> Auto-tracks rent, food, and wifi every month. Can also be applied manually.</li>
+      <li><strong>Fixed Expenses:</strong> Add, edit, or delete one-time fixed expenses.</li>
+      <li><strong>Extra Expenses:</strong> Record ad-hoc spending with name, amount, date, and optional note.</li>
+      <li><strong>Quick Add Chips:</strong> Add common expenses instantly.</li>
+      <li><strong>Sorting & Editing:</strong> Sort extra expenses by amount, edit, or delete entries.</li>
+      <li><strong>Summary:</strong> See total expenses and remaining budget with clear indicators.</li>
+      <li><strong>Export Data:</strong> Download selected months or entire history as CSV.</li>
+      <li><strong>Dark & Light Theme:</strong> Comfortable viewing with theme toggle.</li>
+    </ul>
+
+    <h4>How It Works:</h4>
+    <p>
+      All data is stored locally in your browser using <strong>localStorage</strong>. Recurring expenses are auto-applied each month. Extra and fixed expenses update the summary in real-time. Export data anytime as CSV for backup.
+    </p>
+
+    <h4>⚠ Important Warning:</h4>
+    <p>
+      Clearing your browser history or local storage will permanently delete all expense details and history. Export your data before clearing your browser if you want to save it.
+    </p>
+
+    <h4>Future Improvements:</h4>
+    <ul>
+      <li>Cloud storage for syncing data across devices.</li>
+      <li>Charts and analytics for spending trends.</li>
+      <li>Multi-user support for shared budgets.</li>
+      <li>Improved mobile interface for a smoother experience.</li>
+    </ul>
+  </div>
+</section>
+
+
       <!-- Budget -->
       <section class="card">
         <div class="row gap">
